@@ -1,0 +1,46 @@
+---
+	export interface Props {
+		width: string;
+		area: string;
+	}
+
+	let { width, area } = Astro.props as Props;
+	width = width || '1000';
+	width = `card-of-width width-${width}`;
+	const cardClass = area ? "card-wrap card-body" : "card-wrap";
+---
+
+<div class="fly-card">
+	<div class={width}>
+		<div class={cardClass}>
+			{area ? <div class="card-flex"><slot /></div> : <slot />}
+		</div>
+	</div>
+</div>
+<style>
+	.fly-card {
+		display: block;
+		width: 100%;
+		padding: 0 10px;
+	}
+	.card-wrap {
+		margin-top: -10rem;
+	}
+	.card-body > .card-flex {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+	}
+	.card-body {
+		min-height: 20rem;
+		background: #fff;
+		border-radius: 15px;
+		border: 1px solid #ddd;
+	}
+	@media screen and (max-width: 701px) {
+		.card-flex {
+			flex-direction: column;
+		}
+	}	
+</style>

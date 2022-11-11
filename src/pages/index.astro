@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Intro from '../components/intro/Intro.astro';
+import IntroCards from '../components/intro/IntroCards.astro';
+import BaseCard from '../components/assets/BaseCard.astro';
+import FlyCard from '../components/assets/FlyCard.astro';
+---
+
+<Layout title="Shivam Dewangan | Front-end Developer">
+	<Header />
+	<Intro />
+	<BaseCard
+		title="Hi, I’m Shivam Dewangan. Nice to meet you."
+		body="My journey as a full-stack developer started over 4 years ago, when i was still a High school graduate. Since then I became curious to learn more about this field. I learned many languages over time, and also took this route in the College by applying in full-stack programming. I'm quietly confident, naturally curious, and perpetually working on improving my chops one design problem at a time."
+	/>
+	<FlyCard width="900" area="1">
+		<IntroCards/>
+	</FlyCard>
+	<div class="plain-card">
+		<div class="card-of-width width-800">
+			<div class="center-content">
+				<div class="as-h2 with-margin-2">Interested in collaborating with me?</div>
+				<div class="with-margin-2">I’m always open to discussing product design work or partnership opportunities.</div>
+				<div><a href="/startup" class="button-classic"><i class="far fa-message-lines"> &nbsp; </i> Start a conversation</a></div>
+				<div>or</div>
+				<div><a href="/projects" class="button-classic"><i class="fas fa-hands-asl-interpreting"> &nbsp; </i> Explore more</a></div>
+			</div>
+		</div>
+	</div>
+	<Footer/>
+</Layout>

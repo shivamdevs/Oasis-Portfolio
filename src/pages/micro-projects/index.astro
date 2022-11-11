@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FlyCard from '../../components/assets/FlyCard.astro';
+import HeaderCard from '../../components/assets/HeaderCard.astro';
+import MicroProjectCard from '../../components/assets/MicroProjectCard.astro';
+---
+
+<Layout title="Micro Projects | Shivam Dewangan | Front-end Developer">
+	<Header />
+	<HeaderCard
+		title="Micro Projects"
+		body="Here are a few basic HTML Web components i have created."
+		linktarget="_self"
+		linktext="View new Projects."
+		linkhref="/projects"
+	/>
+	<FlyCard width="1200" area="">
+		<MicroProjectCard/>
+	</FlyCard>
+	<Footer/>
+</Layout>

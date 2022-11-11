@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FlyCard from '../../components/assets/FlyCard.astro';
+import BaseCard from '../../components/assets/BaseCard.astro';
+import SocialCard from '../../components/assets/SocialCard.astro';
+---
+
+<Layout title="Social | Shivam Dewangan | Front-end Developer">
+	<Header />
+	<BaseCard
+		title="My Social Networks"
+		body="Wanna connect to me on social platforms? Choose your most preferred social network."
+	/>
+	<FlyCard width="1200" area="">
+		<SocialCard />
+	</FlyCard>
+	<Footer/>
+</Layout>

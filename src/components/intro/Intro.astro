@@ -1,0 +1,130 @@
+<section class="pjs-intro">
+    <div class="pjs-intro-card">
+        <div class="pjs-intro-box">
+            <div class="pjs-intro-name"><img src="/assets/images/shivam-800x200.png" alt="Shivam Dewangan"/></div>
+            <div class="pjs-intro-tagline">I design and code beautifully simple things, and I love what I do.</div>
+            <div class="pjs-intro-anchors">
+                <div class="pjs-intro-explore"><a href="projects"><i class="far fa-radar"></i> Explore my work</a></div>
+                <div class="pjs-intro-explore"><a href="contact"><i class="far fa-phone"></i> Contact me</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    .pjs-intro {
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+    .pjs-intro-card {
+        display: flex;
+        flex: 1;
+        min-width: 60%;
+        max-width: 800px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 10vh 10px;
+    }
+    .pjs-intro-box {
+        display: flex;
+        flex-direction: column;
+        min-width: 80%;
+        max-width: 600px;
+        width: 100%;
+    }
+    @media screen and (min-width:1101px) {
+        .pjs-intro {
+            background-position: left;
+            background-repeat: no-repeat;
+            background-image: url('/assets/images/intro-girl.svg');
+        }
+        .pjs-intro,
+        .pjs-intro-box {
+            justify-content: flex-end;
+        }
+        .pjs-intro-card {
+            padding: 20vh 10px;
+        }
+    }
+    .pjs-intro-name {
+        font-size: 3em;
+        width: 100%;
+        display: block;
+        max-width: 680px;
+    }
+    .pjs-intro-name img {
+        max-width: 100%;
+    }
+    .pjs-intro-tagline {
+        font-size: 1.2em;
+    }
+    .pjs-intro-anchors {
+        margin-top: 10vh;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        max-width: 650px;
+    }
+    .pjs-intro-explore {
+        margin: 40px;
+    }
+    .pjs-intro-explore a {
+        display: block;
+        padding: 20px 30px;
+        border-radius: 4px;
+        text-decoration: none;
+        color: var(--color-text);
+        transition: .1s;
+        font-size: var(--layout-font-size-xl);
+        border: 1px solid var(--layout-color);
+        color: var(--layout-color);
+        position: relative;
+        background: var(--color-bg);
+    }
+    .pjs-intro-explore a::before,
+    .pjs-intro-explore a::after {
+        content: " ";
+        position: absolute;
+        border: 1px solid var(--layout-color);
+        border-radius: 4px;
+        inset: -5px;
+        transition: .1s;
+        background: #ad7f9f;
+        z-index: -1;
+    }
+    .pjs-intro-explore a::after {
+        background: #ccadba;
+        inset: -10px;
+        z-index: -2;
+    }
+    .pjs-intro-explore a:hover {
+        cursor: pointer;
+        background: var(--layout-color);
+        color: var(--layout-color-white);
+    }
+    .pjs-intro-explore a:not(:hover)::before {
+        inset: 0;
+        background: #ccadba;
+        transform: translate(-10px, -10px);
+    }
+    .pjs-intro-explore a:not(:hover)::after {
+        inset: 0;
+        background: #ad7f9f;
+        transform: translate(-20px, -20px);
+    }
+    @media screen and (max-width:601px) {
+        .pjs-intro-anchors {
+            margin-top: 30px;
+        }
+        .pjs-intro-explore {
+            margin: 20px;
+        }
+        .pjs-intro-tagline {
+            text-align: center;
+        }
+    }
+</style>

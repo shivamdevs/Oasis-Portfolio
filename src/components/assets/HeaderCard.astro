@@ -1,0 +1,32 @@
+---
+export interface Props {
+	title: string;
+	body: string;
+	linktext: string;
+	linkhref: string;
+	linktarget: string;
+}
+
+const { title, body, linktext, linkhref, linktarget } = Astro.props as Props;
+---
+
+<div class="base-card">
+	<div class="card-of-width width-800">
+		<h2>{title}</h2>
+		<p>{body} <a href={linkhref} class="reference" target={ linktarget ? "_self" : "_blank"}>{linktext}</a></p>
+	</div>
+</div>
+<style>
+	.base-card {
+		display: block;
+		width: 100%;
+		padding: 4rem 20px 14rem;
+		text-align: center;
+	}
+	h1 {
+		color: #121212;
+	}
+	p {
+		color: #727888;
+	}
+</style>

@@ -1,0 +1,29 @@
+---
+export interface Props {
+	title: string;
+	body: string;
+}
+
+const { title, body } = Astro.props as Props;
+---
+
+<div class="base-card">
+	<div class="card-of-width width-800">
+		<h2>{title}</h2>
+		<p>{body}</p>
+		<div><slot /></div>
+	</div>
+</div>
+<style>
+	:root {
+		--base-card-color: #6E07F3;
+	}
+	.base-card {
+		display: block;
+		width: 100%;
+		padding: 4rem 20px 14rem;
+		background-color: var(--base-card-color);
+		color: #fff;
+		text-align: center;
+	}
+</style>

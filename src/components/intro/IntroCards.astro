@@ -1,0 +1,68 @@
+<div class="fly-card-slot">
+    <div class="card-break">
+        <p class="card-icon"><i class="fa-fw far fa-layer-plus"></i></p>
+        <p class="card-title">Designer</p>
+        <p class="card-content">I value simple content structure, clean design patterns, and thoughtful interactions.</p>
+    </div>
+    <div class="card-break">
+        <p class="card-subtitle">Things I enjoy designing:</p>
+        <p class="card-content">UX, UI, Web, Js Libraries</p>
+    </div>
+</div>
+<div class="fly-card-slot">
+    <div class="card-break">
+        <p class="card-icon"><i class="fa-fw fas fa-terminal"></i></p>
+        <p class="card-title">Frontend Developer</p>
+        <p class="card-content">I like to code things from scratch, and enjoy bringing ideas to life in the browser.</p>
+    </div>
+    <div class="card-break">
+        <p class="card-subtitle">Languages I speak:</p>
+        <p class="card-content">HTML, CSS, JavaScript, PHP</p>
+    </div>
+</div>
+<style>
+    .fly-card-slot {
+		border-right: 1px solid #ddd;
+		padding: 20px 5vw;
+		text-align: center;
+		flex: 1 1 auto;
+	}
+	@media screen and (max-width: 701px) {
+		.fly-card-slot {
+			width: 100%;
+			border-right: none;
+			border-bottom: 1px solid #ddd;
+		}
+	}
+	.fly-card-slot:last-child {
+		border: none;
+	}
+	.card-icon {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #2bc48a;
+		padding: 13px 12px;
+		border-radius: 50%;
+	}
+	.card-break {
+		margin: 3rem auto;
+	}
+	.fly-card-slot > p {
+		margin: 20px auto;
+	}
+	.card-title {
+		font-size: 1.4em;
+		font-weight: 500;
+	}
+	.card-subtitle {
+		color: var(--base-card-color);
+		font-size: 1.2em;
+	}
+	.card-content {
+		font-size: .9em;
+	}
+	.card-list > div {
+		padding: 5px auto;
+	}
+</style>

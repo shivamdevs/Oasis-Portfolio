@@ -1,0 +1,141 @@
+---
+	const PROJECTS = [
+	{
+			icon: "../../assets/images/social/twitter.png",
+			name: "Twitter",
+			body: "@shivam0dewangan",
+			href: "/social/twitter"
+		},
+		{
+			icon: "../../assets/images/social/github.png",
+			name: "Github Professional",
+			body: "@ShivamDevs",
+			href: "/social/github-professional"
+		},
+		{
+			icon: "../../assets/images/social/github.png",
+			name: "Github Personal",
+			body: "@shivamdewangan",
+			href: "/social/github-personal"
+		},
+		{
+			icon: "../../assets/images/social/linkedin.png",
+			name: "LinkedIn",
+			body: "@shivam-dewangan-04773b1b9",
+			href: "/social/linkedin"
+		},
+		{
+			icon: "../../assets/images/social/email.webp",
+			name: "Mail",
+			body: "shivam0dewangan@gmail.com",
+			href: "/social/email"
+		},
+	];
+	const generate = () => '' + Math.floor(Math.random() * 9);
+---
+<div class="cards">
+	{PROJECTS.map(project => (
+		<a href={project.href} target="_blank" class="pjs-card">
+			<div class="pjs-logo">
+				<img src={project.icon} alt={project.name} class="pjs-icon">
+			</div>
+			<div class="pjs-data" color={generate()}>
+				<div class="pjs-name" set:html={project.name}></div>
+				<div class="pjs-body" set:html={project.body}></div>
+			</div>
+		</a>
+	))}
+</div>
+<style>
+	.cards {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		padding: 10px;
+	}
+	.pjs-card {
+		display: flex;
+		flex: 1;
+		min-width: 200px;
+		max-width: 300px;
+		flex-direction: column;
+		background: #fff;
+		box-shadow: 0 0 0 1px #ddd, 2px 2px 3px 0 #7773;
+		border-radius: 10px;
+		margin: 10px;
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+	}
+	.pjs-logo {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: nowrap;
+		height: 100%;
+		overflow: hidden
+	}
+	.pjs-icon {
+		min-width: 100%;
+		min-height: 100%;
+		transition: .4s;
+	}
+	.pjs-data {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		flex-direction: column;
+		transition: background .4s, opacity .4s;
+		padding: 20px;
+		justify-content: center;
+		color: #fff;
+		opacity: 0;
+	}
+	.pjs-card:hover .pjs-data {
+		opacity: 1;
+	}
+	.pjs-name {
+		font-size: 1.3em;
+		font-weight: 600;
+		padding: 10px 0;
+	}
+	.pjs-body {
+		font-size: .8em;
+		padding: 10px 0;
+	}
+	.pjs-card:hover .pjs-data[color=0] {
+		background: #371B58;
+	}
+	.pjs-card:hover .pjs-data[color=1] {
+		background: #570A57;
+	}
+	.pjs-card:hover .pjs-data[color=2] {
+		background: #1A1A40;
+	}
+	.pjs-card:hover .pjs-data[color=3] {
+		background: #1A1A40;
+	}
+	.pjs-card:hover .pjs-data[color=4] {
+		background: #420516;
+	}
+	.pjs-card:hover .pjs-data[color=5] {
+		background: #1E5128;
+	}
+	.pjs-card:hover .pjs-data[color=6] {
+		background: #082032;
+	}
+	.pjs-card:hover .pjs-data[color=7] {
+		background: #9C3D54;
+	}
+	.pjs-card:hover .pjs-data[color=8] {
+		background: #03506F;
+	}
+	.pjs-card:hover .pjs-data[color=9] {
+		background: #230338;
+	}
+	.pjs-card:hover .pjs-icon {
+		transform: scale(1.3);
+		opacity: 0;
+	}
+</style>

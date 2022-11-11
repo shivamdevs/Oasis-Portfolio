@@ -1,0 +1,143 @@
+<form class="form" action="http://localhost:8000/contact" method="post">
+    <div class="center-content with-margin-1" style="color: red; font-size: 14px">Forms are unavailable right now. Contact via <a class="reference" href="/social">Social Network.</a></div>
+    <div class="group">
+        <label class="label" for="name">Full name <span class="important">*</span>:</label>
+        <input class="input" type="text" name="name" placeholder="Name" required id="name"/>
+    </div>
+    <div class="group">
+        <label class="label" for="email">Email address <span class="important">*</span>:</label>
+        <input class="input" type="email" name="email" placeholder="Email" required id="email"/>
+    </div>
+    <div class="group">
+        <label class="label" for="message">Message <span class="important">*</span>:</label>
+        <textarea class="textarea" name="message" placeholder="Type your Message" required id="message"></textarea>
+    </div>
+    <div class="errors"></div>
+    <div class="group center-content">
+        <button class="submit" type="submit">Send Message</button>
+    </div>
+    <p class="glass">* Note: It may take me some time to respond to your messages. Please hold onto your horses till then.</p>
+
+</form>
+<style>
+    .glass {
+        font-size: 14px;
+        color: #727888;
+    }
+    .form {
+        padding: 20px 5vw;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        width: 100%;
+    }
+    .group {
+        display: block;
+        width: 100%;
+        margin: 20px auto;
+    }
+    .errors {
+        color: red;
+        font-weight: 600;
+        font-size: 13px;
+    }
+    .label {
+        display: block;
+        padding: 10px;
+    }
+    .important {
+        color: red;
+    }
+    .input {
+        width: 100%;
+        display: block;
+        padding: 20px;
+        font-size: inherit;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        outline: none;
+    }
+    .textarea {
+        display: block;
+        width: 100%;
+        padding: 20px;
+        font-size: inherit;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        outline: none;
+        height: 200px;
+        resize: vertical;
+    }
+    .input:hover,
+    .textarea:hover {
+        border-color: #aaa;
+    }
+    .input:focus,
+    .textarea:focus {
+        border-color: #2a52be;
+        box-shadow: 0 0 0 2px #2a52be;
+    }
+    .submit {
+        padding: 15px 30px;
+        margin: auto;
+        border-radius: 5px;
+        border: 1px solid red;
+        color: red;
+        font-size: inherit;
+        background: none;
+        transition: .2s;
+        min-height: 55px;
+        min-width: 180px;
+        position: relative;
+    }
+    .submit:hover {
+        background: red;
+        color: #fff;
+        cursor: pointer;
+    }
+    .submit:disabled {
+        background: rgb(157, 43, 43);
+        cursor: not-allowed;
+    }
+</style>
+<script client:load>
+    const logger = Propbar.new({
+        align: "center",
+    });
+    const loader = `<svg xmlns="http://www.w3.org/2000/svg" class="loader" width="55px" height="55px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><circle class="circle" cx="50" cy="50" r="30" stroke="rgba(0, 0, 0, 0)" stroke-width="0" fill="none"></circle><circle cx="50" cy="50" r="30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" fill="none"><animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="2s" values="0 50 50;180 50 50;720 50 50" keyTimes="0;0.5;1"></animateTransform><animate attributeName="stroke-dasharray" repeatCount="indefinite" dur="2s" values="18.84955592153876 169.64600329384882;169.64600329384882 18.84955592153875;18.84955592153876 169.64600329384882" keyTimes="0;0.5;1"></animate></circle></svg>`;
+    const loaderApply = (dom) => {
+        dom.attr("data-value", dom.html()).attr("disabled", true).html(loader);
+    };
+    const loaderRemove = (dom) => {
+        dom.html(dom.attr("data-value")).removeAttr("disabled").removeAttr("data-value");
+    };
+    Q(".form").submit(function(e) {
+        e.preventDefault();
+        Q.ajax({
+            url: this.action,
+            type: this.method,
+            data: Q(this).serialize(),
+            crossOrigin: true,
+            beforeSend: function() {
+                loaderApply(Q(".submit"));
+                $(".errors").empty();
+
+            },
+            success: (data) => {
+                if (data.type === "success") {
+                    this.reset();
+                    window.location.href = "/contact/success";
+                } else {
+                    $(".errors").html(data.message);
+                }
+                
+            },
+            error: function(data) {
+                logger('Some unexpected error happened, please try again later.', 3000);
+            },
+            complete: function(data) {
+                loaderRemove(Q(".submit"));
+            },
+        });
+    });
+</script>

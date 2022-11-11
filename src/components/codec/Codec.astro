@@ -1,0 +1,43 @@
+---
+export interface Props {
+	language: string;
+}
+
+const { language } = Astro.props as Props;
+---
+<pre class="code-lines"><code class={'language-' + (language || 'javascript')}><slot /></code><button type="button" class="code-copy"><i class="far fa-fw fa-copy"></i></button></pre>
+<style>
+    .code-lines {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+    .code-lines code {
+        display: block;
+        padding: 3em 1em 1em !important;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+    .code-copy {
+        display: block;
+        position: absolute;
+        inset: 0 0 auto auto;
+        border-radius: 0 6px 0 6px;
+        font-size: 18px;
+        border: none;
+        background: none;
+        padding: 5px 10px;
+        color: #fff;
+        transition: .2s;
+    }
+    .code-copy.copied {
+        color: lightgreen;
+    }
+    .code-copy:hover {
+        cursor: pointer;
+        background: #fff3;
+    }
+    .code-copy:active {
+        background: #fff2;
+    }
+</style>

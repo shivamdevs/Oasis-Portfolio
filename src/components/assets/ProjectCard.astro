@@ -1,0 +1,165 @@
+---
+	const PROJECTS = [
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Dom-Selector-Extension",
+			body: "Get NodeName, classList, and id along with styles of elements as an extension.",
+			href: "//chrome.google.com/webstore/detail/dom-selector/bmnofgbgldbkkpgpahilcgalnjocgbla"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Dom-Selector",
+			body: "Get NodeName, classList, and id along with styles of elements.",
+			href: "//github.com/shivamdevs/Dom-Selector"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "jScript",
+			body: "A Javascript library for easier handling of DOM manipulation.",
+			href: "//github.com/shivamdevs/jScript"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "WebStorage",
+			body: "Manages local or session Storage values as an Object.",
+			href: "//github.com/shivamdevs/WebStorage"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Propbar",
+			body: "Shows an custom alert rather than system alert.",
+			href: "//github.com/shivamdevs/PropBar"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Propalert",
+			body: "A centralized alert popup messaging system.",
+			href: "//github.com/shivamdevs/PropAlert"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Console",
+			body: "A duplicate for browser console, where colsole data is displayed inside web.",
+			href: "//github.com/shivamdevs/Console"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Context menu",
+			body: "A popup/context menu for using custom context menu.",
+			href: "//github.com/shivamdevs/ContextMenu"
+		},
+	];
+	const generate = () => '' + Math.floor(Math.random() * 9);
+---
+<div class="cards">
+	{PROJECTS.map(project => (
+		<a href={project.href} class="pjs-card" target="_blank">
+			<div class="pjs-logo">
+				<img src={project.icon} alt={project.name} class="pjs-icon">
+			</div>
+			<div class="pjs-data" color={generate()}>
+				<div class="pjs-name">{project.name}</div>
+				<div class="pjs-body">{project.body}</div>
+			</div>
+		</a>
+	))}
+</div>
+<div class="center-content with-margin-4">
+	<div class="center-content with-margin-1" style="color: red; font-size: 14px">Most of the files are Js based thus have no preview available.</div>
+	<div class="center-content with-margin-1">Look for more stuff.</div>
+	<a href="/micro-projects" class="button-classic"><i class="far fa-microchip"> &nbsp; </i> Explore Micro Projects</a>
+	<a href="/startup" class="button-classic"><i class="far fa-radar"> &nbsp; </i> Plan a startup</a>
+</div>
+<style>
+	.cards {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		padding: 10px;
+	}
+	.pjs-card {
+		display: flex;
+		flex: 1;
+		min-width: 300px;
+		max-width: 400px;
+		flex-direction: column;
+		background: #fff;
+		box-shadow: 0 0 0 1px #ddd, 2px 2px 3px 0 #7773;
+		border-radius: 10px;
+		margin: 10px;
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+	}
+	.pjs-logo {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: nowrap;
+		height: 100%;
+		overflow: hidden
+	}
+	.pjs-icon {
+		min-width: 100%;
+		min-height: 100%;
+		transition: .4s;
+		padding: 10px;
+	}
+	.pjs-data {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		flex-direction: column;
+		transition: background .4s, opacity .4s;
+		padding: 20px;
+		justify-content: center;
+		color: #121212;
+	}
+	.pjs-card:hover .pjs-data {
+		color: #fff;
+	}
+	.pjs-name {
+		font-size: 1.3em;
+		font-weight: 600;
+		padding: 10px 0;
+	}
+	.pjs-body {
+		font-size: .8em;
+		padding: 10px 0;
+	}
+	.pjs-card:hover .pjs-data[color=0] {
+		background: #371B58;
+	}
+	.pjs-card:hover .pjs-data[color=1] {
+		background: #570A57;
+	}
+	.pjs-card:hover .pjs-data[color=2] {
+		background: #1A1A40;
+	}
+	.pjs-card:hover .pjs-data[color=3] {
+		background: #1A1A40;
+	}
+	.pjs-card:hover .pjs-data[color=4] {
+		background: #420516;
+	}
+	.pjs-card:hover .pjs-data[color=5] {
+		background: #1E5128;
+	}
+	.pjs-card:hover .pjs-data[color=6] {
+		background: #082032;
+	}
+	.pjs-card:hover .pjs-data[color=7] {
+		background: #9C3D54;
+	}
+	.pjs-card:hover .pjs-data[color=8] {
+		background: #03506F;
+	}
+	.pjs-card:hover .pjs-data[color=9] {
+		background: #230338;
+	}
+	.pjs-card:hover .pjs-icon {
+		transform: scale(1.3);
+		opacity: 0;
+	}
+</style>

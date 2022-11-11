@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FlyCard from '../../components/assets/FlyCard.astro';
+import BaseCard from '../../components/assets/BaseCard.astro';
+import ContactForm from '../../components/forms/Contact.astro';
+---
+
+<Layout title="Contact | Shivam Dewangan | Front-end Developer">
+	<Header />
+	<BaseCard
+		title="Contact"
+		body="Send me a message here of Connect to me on Social Media."
+	/>
+	<FlyCard width="1200" area="1">
+		<ContactForm />
+	</FlyCard>
+	<Footer/>
+</Layout>

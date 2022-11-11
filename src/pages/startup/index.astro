@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FlyCard from '../../components/assets/FlyCard.astro';
+import BaseCard from '../../components/assets/BaseCard.astro';
+import StartupForm from '../../components/forms/Startup.astro';
+---
+
+<Layout title="Startup | Shivam Dewangan | Front-end Developer">
+	<Header />
+	<BaseCard
+		title="Startup"
+		body="Want to discuss a startup collaboration? I'm most definitely game."
+	/>
+	<FlyCard width="1200" area="1">
+		<StartupForm />
+	</FlyCard>
+	<Footer/>
+</Layout>

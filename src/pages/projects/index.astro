@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FlyCard from '../../components/assets/FlyCard.astro';
+import HeaderCard from '../../components/assets/HeaderCard.astro';
+import ProjectCard from '../../components/assets/ProjectCard.astro';
+---
+
+<Layout title="Projects | Shivam Dewangan | Front-end Developer">
+	<Header />
+	<HeaderCard
+		title="My Projects"
+		body="Here are a few past design projects I've worked on. Want to see more?"
+		linktarget="_blank"
+		linktext="Message me."
+		linkhref="/contact"
+	/>
+	<FlyCard width="1200" area="">
+		<ProjectCard />
+	</FlyCard>
+	<Footer/>
+</Layout>

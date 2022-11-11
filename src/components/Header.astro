@@ -1,0 +1,92 @@
+<header class="pjs-header" id="header">
+    <div class="pjs-header-flex">
+        <div class="pjs-header-left">
+            <a class="pjs-header-logo" href="/">
+                <img src="/assets/images/logo-80x80.png" alt="Shivam Dewangan" />
+            </a>
+        </div>
+        <div class="pjs-header-menu">
+            <button class="pjs-header-button pjs-header-menu-button"><i class="far fa-fw fa-bars"></i></button>
+        </div>
+        <div class="pjs-header-right">
+            <a href="/" class="pjs-header-button">Home</a>
+            <a href="/projects" class="pjs-header-button">Projects</a>
+            <a href="/micro-projects" class="pjs-header-button">Micro Projects</a>
+            <a href="/startup" class="pjs-header-button">Startup</a>
+            <a href="/contact" class="pjs-header-button pjs-header-button-differ"><i class="far fa-smile"> &nbsp;</i> Say Hello</a>
+        </div>
+    </div>
+</header>
+<style>
+    .pjs-header {
+        width: 100%;
+    }
+    .pjs-header-flex {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        position: relative;
+    }
+    .pjs-header-logo {
+        width: 60px;
+        display: block;
+    }
+    .pjs-header-logo img {
+        max-width: 100%;
+    }
+    .pjs-header-button {
+        display: inline-flex;
+        margin: 5px;
+        padding: 12px 18px;
+        border-radius: 25px;
+        text-decoration: none;
+        color: var(--color-text);
+        transition: .1s;
+        font-size: var(--layout-font-size);
+    }
+    .pjs-header-button:hover {
+        cursor: pointer;
+        background: var(--layout-semi-white);
+    }
+    .pjs-header-menu-button,
+    .pjs-header-button-differ {
+        border: 1px solid var(--layout-color);
+        color: var(--layout-color);
+    }
+    .pjs-header-menu-button {
+        background: none;
+        padding: 14px 12px;
+    }
+    .pjs-header-menu-button:hover,
+    .pjs-header-button-differ:hover {
+        background: var(--layout-color);
+        color: var(--layout-color-white);
+    }
+    @media screen and (min-width:751px) {
+        .pjs-header-menu {
+            display: none;
+        }
+    }
+    @media screen and (max-width:751px) {
+        .pjs-header-right.pjs-header-visible {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .pjs-header-right:not(.pjs-header-visible) {
+            display: none;
+        }
+        .pjs-header-flex {
+            flex-wrap: wrap;
+        }
+    }
+</style>
+<script client:load>
+    $(".pjs-header-menu-button").click(function(e) {
+        $(".pjs-header-right").toggleClass("pjs-header-visible");
+        $("i", this).toggleClass("fa-bars fa-xmark");
+    });
+</script>
