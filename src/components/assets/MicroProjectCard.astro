@@ -1,22 +1,52 @@
 ---
 	const PROJECTS = [
+				{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Dom-Selector-Extension",
+			body: "Get NodeName, classList, and id along with styles of elements as an extension.",
+			href: "//chrome.google.com/webstore/detail/dom-selector/bmnofgbgldbkkpgpahilcgalnjocgbla"
+		},
 		{
 			icon: "../../assets/images/logo-512x512.png",
-			name: "Phone-Directory-React",
-			body: "A college project of React based Phone Directory Application.",
-			href: "//stately-boba-258c57.netlify.app/"
+			name: "Dom-Selector",
+			body: "Get NodeName, classList, and id along with styles of elements.",
+			href: "//github.com/shivamdevs/Dom-Selector"
 		},
 		{
-			icon: "../../assets/images/products/micro-projects/tic-tac-toe.png",
-			name: "Tic Tac Toe",
-			body: "Tired of daily work? Play some Tic Tac Toe with a friend.",
-			href: "/micro-projects/tictactoe"
+			icon: "../../assets/images/logo-512x512.png",
+			name: "jScript",
+			body: "A Javascript library for easier handling of DOM manipulation.",
+			href: "//github.com/shivamdevs/jScript"
 		},
 		{
-			icon: "../../assets/images/products/micro-projects/calculator.png",
-			name: "Calculator",
-			body: "Calculate any thing with advance calculator.",
-			href: "/micro-projects/calculator"
+			icon: "../../assets/images/logo-512x512.png",
+			name: "WebStorage",
+			body: "Manages local or session Storage values as an Object.",
+			href: "//github.com/shivamdevs/WebStorage"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Propbar",
+			body: "Shows an custom alert rather than system alert.",
+			href: "//github.com/shivamdevs/PropBar"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Propalert",
+			body: "A centralized alert popup messaging system.",
+			href: "//github.com/shivamdevs/PropAlert"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Console",
+			body: "A duplicate for browser console, where colsole data is displayed inside web.",
+			href: "//github.com/shivamdevs/Console"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Context menu",
+			body: "A popup/context menu for using custom context menu.",
+			href: "//github.com/shivamdevs/ContextMenu"
 		},
 		// {
 		// 	icon: "../../assets/images/products/micro-projects/admin-dashboard.png",
@@ -71,8 +101,7 @@
 	))}
 </div>
 <div class="center-content with-margin-4">
-	{false && <div class="center-content with-margin-1" style="color: red; font-size: 14px">Working issues: These file were made using PHP and cannot run without an apache server.</div>}
-	<div class="center-content with-margin-1" style="font-size: 14px">Copyright warning: All this pages were designed by me. Some ideas from other websites were taken.</div>
+	<div class="center-content with-margin-1" style="color: red; font-size: 14px">All files are JavaScript based thus have no preview available.</div>
 </div>
 <style>
 	.cards {
@@ -84,8 +113,8 @@
 	.pjs-card {
 		display: flex;
 		flex: 1;
-		min-width: 300px;
-		max-width: 400px;
+		min-width: 240px;
+		max-width: 320px;
 		flex-direction: column;
 		background: #fff;
 		box-shadow: 0 0 0 1px #ddd, 2px 2px 3px 0 #7773;
@@ -108,6 +137,7 @@
 		min-width: 100%;
 		min-height: 100%;
 		transition: .4s;
+		padding: 10px;
 	}
 	.pjs-data {
 		position: absolute;
@@ -117,11 +147,10 @@
 		transition: background .4s, opacity .4s;
 		padding: 20px;
 		justify-content: center;
-		color: #fff;
-		opacity: 0;
+		color: #121212;
 	}
 	.pjs-card:hover .pjs-data {
-		opacity: 1;
+		color: #fff;
 	}
 	.pjs-name {
 		font-size: 1.3em;

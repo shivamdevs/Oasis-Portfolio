@@ -1,52 +1,46 @@
 ---
 	const PROJECTS = [
 		{
-			icon: "../../assets/images/logo-512x512.png",
-			name: "Dom-Selector-Extension",
-			body: "Get NodeName, classList, and id along with styles of elements as an extension.",
-			href: "//chrome.google.com/webstore/detail/dom-selector/bmnofgbgldbkkpgpahilcgalnjocgbla"
+			icon: "../../assets/images/products/projects/todo.png",
+			name: "To do - Tasks",
+			body: "Create your daily to-dos and view them across the internet. This is currently mobile based.",
+			href: "https://lite.private.myoasis.tech"
 		},
 		{
-			icon: "../../assets/images/logo-512x512.png",
-			name: "Dom-Selector",
-			body: "Get NodeName, classList, and id along with styles of elements.",
-			href: "//github.com/shivamdevs/Dom-Selector"
+			icon: "../../assets/images/products/projects/private-lite.png",
+			name: "Private note - Lite",
+			body: "Create a private note and share it links to anyone for viewing.",
+			href: "https://lite.private.myoasis.tech"
 		},
 		{
-			icon: "../../assets/images/logo-512x512.png",
-			name: "jScript",
-			body: "A Javascript library for easier handling of DOM manipulation.",
-			href: "//github.com/shivamdevs/jScript"
+			icon: "../../assets/images/products/projects/lists.png",
+			name: "To do - Lists",
+			body: "Create a list of to dos to manage your tasks more efficiently.",
+			href: "https://lists.myoasis.tech"
 		},
 		{
-			icon: "../../assets/images/logo-512x512.png",
-			name: "WebStorage",
-			body: "Manages local or session Storage values as an Object.",
-			href: "//github.com/shivamdevs/WebStorage"
+			icon: "../../assets/images/products/projects/directory.png",
+			name: "Phone Directory 2",
+			body: "Manage a lists of customer contact details with more options.",
+			href: "https://router.directory.myoasis.tech"
 		},
 		{
-			icon: "../../assets/images/logo-512x512.png",
-			name: "Propbar",
-			body: "Shows an custom alert rather than system alert.",
-			href: "//github.com/shivamdevs/PropBar"
+			icon: "../../assets/images/products/projects/directory.png",
+			name: "Phone Directory",
+			body: "Manage a lists of customer contact details.",
+			href: "https://directory.myoasis.tech"
 		},
 		{
-			icon: "../../assets/images/logo-512x512.png",
-			name: "Propalert",
-			body: "A centralized alert popup messaging system.",
-			href: "//github.com/shivamdevs/PropAlert"
+			icon: "../../assets/images/products/projects/tic-tac-toe.png",
+			name: "Tic Tac Toe",
+			body: "Tired of daily work? Play some Tic Tac Toe with a friend.",
+			href: "/projects/tictactoe"
 		},
 		{
-			icon: "../../assets/images/logo-512x512.png",
-			name: "Console",
-			body: "A duplicate for browser console, where colsole data is displayed inside web.",
-			href: "//github.com/shivamdevs/Console"
-		},
-		{
-			icon: "../../assets/images/logo-512x512.png",
-			name: "Context menu",
-			body: "A popup/context menu for using custom context menu.",
-			href: "//github.com/shivamdevs/ContextMenu"
+			icon: "../../assets/images/products/projects/calculator.png",
+			name: "Calculator",
+			body: "Calculate any thing with advance calculator.",
+			href: "/projects/calculator"
 		},
 	];
 	const generate = () => '' + Math.floor(Math.random() * 9);
@@ -65,7 +59,7 @@
 	))}
 </div>
 <div class="center-content with-margin-4">
-	<div class="center-content with-margin-1" style="color: red; font-size: 14px">Most of the files are Js based thus have no preview available.</div>
+	<div class="center-content with-margin-1" style="font-size: 14px">Copyright warning: All this pages were designed by me. Some ideas from other websites were taken.</div>
 	<div class="center-content with-margin-1">Look for more stuff.</div>
 	<a href="/micro-projects" class="button-classic"><i class="far fa-microchip"> &nbsp; </i> Explore Micro Projects</a>
 	<a href="/startup" class="button-classic"><i class="far fa-radar"> &nbsp; </i> Plan a startup</a>
@@ -104,7 +98,6 @@
 		min-width: 100%;
 		min-height: 100%;
 		transition: .4s;
-		padding: 10px;
 	}
 	.pjs-data {
 		position: absolute;
@@ -114,10 +107,11 @@
 		transition: background .4s, opacity .4s;
 		padding: 20px;
 		justify-content: center;
-		color: #121212;
+		color: #fff;
+		opacity: 0;
 	}
 	.pjs-card:hover .pjs-data {
-		color: #fff;
+		opacity: 1;
 	}
 	.pjs-name {
 		font-size: 1.3em;

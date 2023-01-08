@@ -19,10 +19,14 @@
         <p class="card-subtitle">Languages I speak:</p>
         <p class="card-content">HTML, CSS, JavaScript, PHP</p>
     </div>
+	    <div class="card-break">
+        <p class="card-subtitle">Frameworks I know:</p>
+        <p class="card-content">ReactJs, Astro</p>
+    </div>
 </div>
 <style>
     .fly-card-slot {
-		border-right: 1px solid #ddd;
+		border-left: 1px solid #ddd;
 		padding: 20px 5vw;
 		text-align: center;
 		flex: 1 1 auto;
@@ -30,11 +34,11 @@
 	@media screen and (max-width: 701px) {
 		.fly-card-slot {
 			width: 100%;
-			border-right: none;
-			border-bottom: 1px solid #ddd;
+			border-left: none;
+			border-top: 1px solid #ddd;
 		}
 	}
-	.fly-card-slot:last-child {
+	.fly-card-slot:first-child {
 		border: none;
 	}
 	.card-icon {
