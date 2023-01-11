@@ -10,17 +10,17 @@
         </div>
         <div class="pjs-header-right">
             <a href="/" class="pjs-header-button">Home</a>
-            <a href="/projects" class="pjs-header-button">Projects</a>
-            <a href="/starter" class="pjs-header-button">Starter Projects</a>
-            <a href="/working" class="pjs-header-button">Working Projects</a>
-            <a href="/startup" class="pjs-header-button">Startup</a>
-            <a href="/contact" class="pjs-header-button pjs-header-button-differ"><i class="far fa-smile"> &nbsp;</i> Say Hello</a>
+            <a href="/projects/" class="pjs-header-button">Projects</a>
+            <a href="/starter/" class="pjs-header-button">Starter Projects</a>
+            <a href="/working/" class="pjs-header-button">Working Projects</a>
+            <a href="/startup/" class="pjs-header-button">Startup</a>
+            <a href="/contact/" class="pjs-header-button pjs-header-button-differ"><i class="far fa-smile"> &nbsp;</i> Say Hello</a>
         </div>
     </div>
 </header>
 <script>
     document.querySelectorAll('a.pjs-header-button').forEach(link => {
-        if (location.pathname.includes(link.getAttribute('href'))) link.classList.add('pjs-active');
+        if (link.getAttribute('href') === location.pathname) link.classList.add('pjs-active');
     });
 </script>
 <style>
