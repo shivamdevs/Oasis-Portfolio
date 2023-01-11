@@ -1,159 +1,105 @@
 ---
-	const PROJECTS = [
-		{
-			icon: "../../assets/images/products/projects/todo.png",
-			name: "To do - Tasks",
-			body: "Create your daily to-dos and view them across the internet. This is currently mobile based.",
-			href: "https://lite.private.myoasis.tech"
-		},
-		{
-			icon: "../../assets/images/products/projects/private-lite.png",
-			name: "Private note - Lite",
-			body: "Create a private note and share it links to anyone for viewing.",
-			href: "https://lite.private.myoasis.tech"
-		},
-		{
-			icon: "../../assets/images/products/projects/lists.png",
-			name: "To do - Lists",
-			body: "Create a list of to dos to manage your tasks more efficiently.",
-			href: "https://lists.myoasis.tech"
-		},
-		{
-			icon: "../../assets/images/products/projects/directory.png",
-			name: "Phone Directory 2",
-			body: "Manage a lists of customer contact details with more options.",
-			href: "https://router.directory.myoasis.tech"
-		},
-		{
-			icon: "../../assets/images/products/projects/directory.png",
-			name: "Phone Directory",
-			body: "Manage a lists of customer contact details.",
-			href: "https://directory.myoasis.tech"
-		},
-		{
-			icon: "../../assets/images/products/projects/tic-tac-toe.png",
-			name: "Tic Tac Toe",
-			body: "Tired of daily work? Play some Tic Tac Toe with a friend.",
-			href: "/projects/tictactoe"
-		},
-		{
-			icon: "../../assets/images/products/projects/calculator.png",
-			name: "Calculator",
-			body: "Calculate any thing with advance calculator.",
-			href: "/projects/calculator"
-		},
-	];
-	const generate = () => '' + Math.floor(Math.random() * 9);
+let { items } = Astro.props;
 ---
+
 <div class="cards">
-	{PROJECTS.map(project => (
-		<a href={project.href} class="pjs-card" target="_blank">
-			<div class="pjs-logo">
-				<img src={project.icon} alt={project.name} class="pjs-icon">
-			</div>
-			<div class="pjs-data" color={generate()}>
-				<div class="pjs-name">{project.name}</div>
-				<div class="pjs-body">{project.body}</div>
-			</div>
-		</a>
-	))}
-</div>
-<div class="center-content with-margin-4">
-	<div class="center-content with-margin-1" style="font-size: 14px">Copyright warning: All this pages were designed by me. Some ideas from other websites were taken.</div>
-	<div class="center-content with-margin-1">Look for more stuff.</div>
-	<a href="/micro-projects" class="button-classic"><i class="far fa-microchip"> &nbsp; </i> Explore Micro Projects</a>
-	<a href="/startup" class="button-classic"><i class="far fa-radar"> &nbsp; </i> Plan a startup</a>
+	{
+		items.map(
+			(item: {
+				href: string | URL;
+				icon: string;
+				name: unknown;
+				body: unknown;
+			}) => (
+				<a href={item.href} class="pjs-card" target="_blank">
+					<div class="pjs-logo">
+						<img src={item.icon} alt="" class="pjs-icon" />
+					</div>
+					<div class="pjs-data">
+						<div class="pjs-name">{item.name}</div>
+						<div class="pjs-body">{item.body}</div>
+					</div>
+				</a>
+			)
+		)
+	}
 </div>
 <style>
 	.cards {
 		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-		padding: 10px;
+		flex-wrap: nowrap;
+		flex-direction: column;
+		box-shadow: 0 0 10px 5px var(--color-border);
+		border-radius: 6px;
+		overflow: hidden;
 	}
 	.pjs-card {
+		text-decoration: none;
 		display: flex;
-		flex: 1;
-		min-width: 300px;
-		max-width: 400px;
-		flex-direction: column;
-		background: #fff;
-		box-shadow: 0 0 0 1px #ddd, 2px 2px 3px 0 #7773;
-		border-radius: 10px;
-		margin: 10px;
-		position: relative;
-		overflow: hidden;
+		flex-direction: row;
+		align-items: center;
+		width: 100%;
 		cursor: pointer;
+		overflow: hidden;
+		background: var(--color-bg);
+		padding: 10px 20px;
+		transition: 0.2s;
+	}
+	.pjs-card:nth-child(even) {
+		background: #f8faff;
+	}
+	.pjs-card:not(:last-child) {
+		border-bottom: 1px solid var(--color-border);
+	}
+	.pjs-card:hover {
+		background: var(--color-bg-alter);
 	}
 	.pjs-logo {
 		display: flex;
-		width: 100%;
 		justify-content: center;
 		align-items: center;
+		box-shadow: 0 0 0 1px var(--color-border);
 		flex-wrap: nowrap;
-		height: 100%;
-		overflow: hidden
+		min-width: 102.4px;
+		max-width: 102.4px;
+		min-height: 64px;
+		max-height: 64px;
+		overflow: hidden;
+		border-radius: 6px;
+		background-color: #0001;
 	}
 	.pjs-icon {
-		min-width: 100%;
-		min-height: 100%;
-		transition: .4s;
+		max-width: 100%;
+		max-height: 100%;
 	}
 	.pjs-data {
-		position: absolute;
-		inset: 0;
+		width: calc(100% - 150px);
 		display: flex;
 		flex-direction: column;
-		transition: background .4s, opacity .4s;
-		padding: 20px;
+		transition: 0.2s;
+		padding-left: 20px;
 		justify-content: center;
-		color: #fff;
-		opacity: 0;
+		opacity: 0.8;
 	}
 	.pjs-card:hover .pjs-data {
 		opacity: 1;
 	}
 	.pjs-name {
 		font-size: 1.3em;
+		color: #121212;
 		font-weight: 600;
-		padding: 10px 0;
 	}
 	.pjs-body {
-		font-size: .8em;
+		font-size: 0.8em;
 		padding: 10px 0;
+		color: #545888;
 	}
-	.pjs-card:hover .pjs-data[color=0] {
-		background: #371B58;
-	}
-	.pjs-card:hover .pjs-data[color=1] {
-		background: #570A57;
-	}
-	.pjs-card:hover .pjs-data[color=2] {
-		background: #1A1A40;
-	}
-	.pjs-card:hover .pjs-data[color=3] {
-		background: #1A1A40;
-	}
-	.pjs-card:hover .pjs-data[color=4] {
-		background: #420516;
-	}
-	.pjs-card:hover .pjs-data[color=5] {
-		background: #1E5128;
-	}
-	.pjs-card:hover .pjs-data[color=6] {
-		background: #082032;
-	}
-	.pjs-card:hover .pjs-data[color=7] {
-		background: #9C3D54;
-	}
-	.pjs-card:hover .pjs-data[color=8] {
-		background: #03506F;
-	}
-	.pjs-card:hover .pjs-data[color=9] {
-		background: #230338;
-	}
-	.pjs-card:hover .pjs-icon {
-		transform: scale(1.3);
-		opacity: 0;
+	@media screen and (max-width: 600px) {
+		.pjs-card {
+			padding: 10px;
+		}
+		.pjs-data {
+			padding-left: 10px;
+		}
 	}
 </style>

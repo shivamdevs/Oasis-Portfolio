@@ -1,23 +1,172 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import FlyCard from '../../components/assets/FlyCard.astro';
-import HeaderCard from '../../components/assets/HeaderCard.astro';
-import ProjectCard from '../../components/assets/ProjectCard.astro';
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import FlyCard from "../../components/assets/FlyCard.astro";
+import HeaderCard from "../../components/assets/HeaderCard.astro";
+import ProjectCard from "../../components/assets/ProjectCard.astro";
+
+const PROJECTS = [
+	{
+		icon: "https://d33wubrfki0l68.cloudfront.net/63be66065d805f5fabfa83ce/screenshot_2023-01-11-07-32-49-0000.png",
+		name: "To do - lists",
+		body: "Create a list of to-dos to manage your tasks more efficiently. Stored on localStorage.",
+		href: "https://todo.project.myoasis.tech",
+	},
+	{
+		icon: "https://d33wubrfki0l68.cloudfront.net/63beed22d8f3c200091fe40d/screenshot_2023-01-11-17-09-25-0000.png",
+		name: "Streamflix - Watch together",
+		body: "Watch movies together. A rip-off version of Meet. This project is dropped right now.",
+		href: "https://streamflix.myoasis.tech",
+	},
+	{
+		icon: "https://d33wubrfki0l68.cloudfront.net/63be6bcf26481a67579d5c0e/screenshot_2023-01-11-07-57-38-0000.png",
+		name: "Meet - Video meeting",
+		body: "Perform a video call to connect with anyone at anytime. This project is dropped right now.",
+		href: "https://meet.myoasis.tech",
+	},
+	{
+		icon: "https://d33wubrfki0l68.cloudfront.net/63bf08a94cffa80009e1f9da/screenshot_2023-01-11-19-07-12-0000.png",
+		name: "Task Manager",
+		body: "Manage all your tasks at one place with multiple workspaces. This project is dropped right now.",
+		href: "https://task-manager.myoasis.tech",
+	},
+	{
+		icon: "https://d33wubrfki0l68.cloudfront.net/63be6a395d4f41663599853c/screenshot_2023-01-11-07-50-53-0000.png",
+		name: "Account Manager",
+		body: "A react based app to manage multiple accounts on different site at one place. This project is dropped right now.",
+		href: "https://account-manager.myoasis.tech",
+	},
+	{
+		icon: "https://d33wubrfki0l68.cloudfront.net/63bec4e0a12c9800087a5abc/screenshot_2023-01-11-14-17-56-0000.png",
+		name: "React Player - Component",
+		body: "A react based component to integrate video player of react web apps. This project is dropped right now.",
+		href: "https://player.project.myoasis.tech",
+	},
+];
+
+const PROJECTS2 = [
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Dom-Selector-Extension",
+			body: "Get NodeName, classList, and id along with styles of elements as an extension.",
+			href: "//chrome.google.com/webstore/detail/dom-selector/bmnofgbgldbkkpgpahilcgalnjocgbla"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Dom-Selector",
+			body: "Get NodeName, classList, and id along with styles of elements.",
+			href: "//github.com/shivamdevs/Dom-Selector"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "jScript",
+			body: "A Javascript library for easier handling of DOM manipulation.",
+			href: "//github.com/shivamdevs/jScript"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "WebStorage",
+			body: "Manages local or session Storage values as an Object.",
+			href: "//github.com/shivamdevs/WebStorage"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Propbar",
+			body: "Shows an custom alert rather than system alert.",
+			href: "//github.com/shivamdevs/PropBar"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Propalert",
+			body: "A centralized alert popup messaging system.",
+			href: "//github.com/shivamdevs/PropAlert"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Console",
+			body: "A duplicate for browser console, where colsole data is displayed inside web.",
+			href: "//github.com/shivamdevs/Console"
+		},
+		{
+			icon: "../../assets/images/logo-512x512.png",
+			name: "Context menu",
+			body: "A popup/context menu for using custom context menu.",
+			href: "//github.com/shivamdevs/ContextMenu"
+		},
+		// {
+		// 	icon: "../../assets/images/products/micro-projects/admin-dashboard.png",
+		// 	name: "Admin Dashboard",
+		// 	body: "Manage your website with the admin dashboard. (Prototype only).<br><br>Not working right now.",
+		// 	href: "/micro-projects/admin-dashboard"
+		// },
+		// {
+		// 	icon: "../../assets/images/products/micro-projects/index-01.png",
+		// 	name: "Intro Page - 1",
+		// 	body: "A new gradient style index page for more stylish.<br>Not working right now.<br><br>Not working right now.",
+		// 	href: "/micro-projects/index-01"
+		// },
+		// {
+		// 	icon: "../../assets/images/products/micro-projects/index-02.png",
+		// 	name: "Intro Page - 2",
+		// 	body: "Basic Styled index page with much more functionality.<br>Not working right now.<br><br>Not working right now.",
+		// 	href: "/micro-projects/index-02"
+		// },
+		// {
+		// 	icon: "../../assets/images/products/micro-projects/index-03.png",
+		// 	name: "Intro Page - 3",
+		// 	body: "Basic Styled index page with much more functionality.<br>Not working right now.<br><br>Not working right now.",
+		// 	href: "/micro-projects/index-01"
+		// },
+		// {
+		// 	icon: "../../assets/images/products/micro-projects/index-04.png",
+		// 	name: "Intro Page - 4",
+		// 	body: "A new gradient style index page for more stylish.<br>Not working right now.<br><br>Not working right now.",
+		// 	href: "/micro-projects/index-01"
+		// },
+		// {
+		// 	icon: "../../assets/images/products/micro-projects/index-05.png",
+		// 	name: "Intro Page - 5",
+		// 	body: "Basic Styled index page with much more functionality.<br>Not working right now.<br><br>Not working right now.",
+		// 	href: "/micro-projects/index-02"
+		// },
+];
 ---
 
 <Layout title="Projects | Shivam Dewangan | Front-end Developer">
 	<Header />
 	<HeaderCard
 		title="My Projects"
-		body="Here are a few past design projects I've worked on. Want to see more?"
-		linktarget="_blank"
-		linktext="Message me."
-		linkhref="/contact"
+		body="Here are a few past design projects I've worked on. Most of them are dropped off due to certain reasons."
+		linktarget=""
+		linktext=""
+		linkhref=""
 	/>
 	<FlyCard width="1200" area="">
-		<ProjectCard />
+		<ProjectCard items={PROJECTS} />
 	</FlyCard>
-	<Footer/>
+	<HeaderCard
+		title="Older Projects"
+		body="Here are few more projects I've worked on. Its mostly based on JavaScript and can be used by importing as script file."
+		linktarget=""
+		linktext=""
+		linkhref=""
+	/>
+	<FlyCard width="1200" area="">
+		<ProjectCard items={PROJECTS2} />
+		<div class="center-content with-margin-4">
+			<div class="center-content with-margin-1" style="font-size: 14px">
+				Copyright warning: All this pages were designed by me. Some
+				ideas from other websites were taken.
+			</div>
+			<div class="center-content with-margin-1">Look for more stuff.</div>
+			<a href="/starter" class="button-classic"
+				><i class="far fa-radar"> &nbsp;</i> Explore Starter Projects</a
+			>
+			<a href="/working" class="button-classic"
+				><i class="far fa-microchip"> &nbsp;</i> Explore Working Projects</a
+			>
+		</div>
+	</FlyCard>
+	<Footer />
 </Layout>

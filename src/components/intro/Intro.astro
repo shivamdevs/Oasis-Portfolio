@@ -4,7 +4,9 @@
             <div class="pjs-intro-name"><img src="/assets/images/shivam-800x200.png" alt="Shivam Dewangan"/></div>
             <div class="pjs-intro-tagline">I design and code beautifully simple things, and I love what I do.</div>
             <div class="pjs-intro-anchors">
-                <div class="pjs-intro-explore"><a href="projects"><i class="far fa-radar"></i> Explore my work</a></div>
+                <div class="pjs-intro-explore"><a href="/projects"><i class="far fa-radar"></i> Explore my work</a></div>
+                <div class="pjs-intro-explore"><a href="/starter"><i class="far fa-circle-play"></i> Starter Projects</a></div>
+                <div class="pjs-intro-explore"><a href="/working"><i class="far fa-triangle-person-digging"></i> Currently working</a></div>
                 <div class="pjs-intro-explore"><a href="contact"><i class="far fa-phone"></i> Contact me</a></div>
             </div>
         </div>
@@ -37,6 +39,7 @@
     @media screen and (min-width:1101px) {
         .pjs-intro {
             background-position: left;
+            background-size: 700px;
             background-repeat: no-repeat;
             background-image: url('/assets/images/intro-girl.svg');
         }
@@ -52,16 +55,16 @@
         font-size: 3em;
         width: 100%;
         display: block;
-        max-width: 680px;
+        max-width: 600px;
     }
     .pjs-intro-name img {
         max-width: 100%;
     }
     .pjs-intro-tagline {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
     .pjs-intro-anchors {
-        margin-top: 10vh;
+        margin-top: 7vh;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
@@ -70,7 +73,8 @@
         max-width: 650px;
     }
     .pjs-intro-explore {
-        margin: 40px;
+        margin: 30px;
+        z-index: 1;
     }
     .pjs-intro-explore a {
         display: block;

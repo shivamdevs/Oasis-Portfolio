@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FlyCard from '../../components/assets/FlyCard.astro';
+import HeaderCard from '../../components/assets/HeaderCard.astro';
+import ProjectCard from '../../components/assets/ProjectCard.astro';
+
+const PROJECTS = [
+		{
+			icon: "https://d33wubrfki0l68.cloudfront.net/63be6f87c631426a62669709/screenshot_2023-01-11-08-13-43-0000.png",
+			name: "Accounts - Component",
+			body: "A ReactJs accounts login component. Attach to the project and your auth page is ready to go.",
+			href: "https://accounts.project.myoasis.tech"
+		},
+		{
+			icon: "https://d33wubrfki0l68.cloudfront.net/63be6457b95e955eea5a3dbd/screenshot_2023-01-11-07-25-57-0000.png",
+			name: "To do - Tasks",
+			body: "An app to create tasks. Manage, update multiple tasks and lists of tasks at one place.",
+			href: "https://tasks.myoasis.tech"
+		},
+		{
+			icon: "https://d33wubrfki0l68.cloudfront.net/63be6d230416b969f363e687/screenshot_2023-01-11-08-03-21-0000.png",
+			name: "Private Note - Lite",
+			body: "A lite version of upcoming Private note app. Based on privnote.com. Create notes and share the links.",
+			href: "https://notes-lite.myoasis.tech"
+		}
+	];
+---
+
+<Layout title="Working Projects | Shivam Dewangan | Front-end Developer">
+	<Header />
+	<HeaderCard
+		title="Currently Ongoing Projects"
+		body="These are the projects that I am working upon right now. These are still under progress."
+		linktext=""
+		linktarget=""
+		linkhref=""
+	/>
+	<FlyCard width="1200" area="">
+		<ProjectCard items={PROJECTS} />
+		<div class="center-content with-margin-4">
+			<div class="center-content with-margin-1" style="font-size: 14px">Copyright warning: All this pages were designed by me. Some ideas from other websites were taken.</div>
+			<div class="center-content with-margin-1">Look for more stuff.</div>
+			<a href="/projects" class="button-classic"><i class="far fa-microchip"> &nbsp; </i> Explore Recent Projects</a>
+			<a href="/starter" class="button-classic"><i class="far fa-radar"> &nbsp; </i> Explore Starter Projects</a>
+		</div>
+	</FlyCard>
+	<Footer/>
+</Layout>

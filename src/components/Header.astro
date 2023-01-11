@@ -11,12 +11,18 @@
         <div class="pjs-header-right">
             <a href="/" class="pjs-header-button">Home</a>
             <a href="/projects" class="pjs-header-button">Projects</a>
-            <a href="/micro-projects" class="pjs-header-button">Micro Projects</a>
+            <a href="/starter" class="pjs-header-button">Starter Projects</a>
+            <a href="/working" class="pjs-header-button">Working Projects</a>
             <a href="/startup" class="pjs-header-button">Startup</a>
             <a href="/contact" class="pjs-header-button pjs-header-button-differ"><i class="far fa-smile"> &nbsp;</i> Say Hello</a>
         </div>
     </div>
 </header>
+<script>
+    document.querySelectorAll('a.pjs-header-button').forEach(link => {
+        if (link.getAttribute('href') === location.pathname) link.classList.add('pjs-active');
+    });
+</script>
 <style>
     .pjs-header {
         width: 100%;
@@ -50,6 +56,11 @@
         cursor: pointer;
         background: var(--layout-semi-white);
     }
+    .pjs-header-button.pjs-active {
+        border: 1px solid var(--layout-color);
+        color: var(--layout-color-white);
+        background: var(--layout-color);
+    }
     .pjs-header-menu-button,
     .pjs-header-button-differ {
         border: 1px solid var(--layout-color);
@@ -64,17 +75,30 @@
         background: var(--layout-color);
         color: var(--layout-color-white);
     }
-    @media screen and (min-width:751px) {
+    @media screen and (min-width:915px) {
         .pjs-header-menu {
             display: none;
         }
     }
-    @media screen and (max-width:751px) {
+    @media screen and (max-width:915px) {
+        .pjs-header-flex.pjs-active .pjs-header-menu-button,
+        .pjs-header-flex.pjs-active .pjs-header-logo {
+            position: absolute;
+            z-index: 12;
+        }
+        .pjs-header-flex.pjs-active .pjs-header-menu-button {
+            right: 20px;
+            top: 23px;
+        }
         .pjs-header-right.pjs-header-visible {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            width: 100%;
+            flex-direction: column;
+            padding: 100px 10px;
+            position: fixed;
+            z-index: 11;
+            inset: 0;
+            overflow: auto;
+            background-color: var(--color-bg);
         }
         .pjs-header-right:not(.pjs-header-visible) {
             display: none;
@@ -87,6 +111,8 @@
 <script client:load>
     $(".pjs-header-menu-button").click(function(e) {
         $(".pjs-header-right").toggleClass("pjs-header-visible");
+        $(".pjs-header-flex").toggleClass("pjs-active");
         $("i", this).toggleClass("fa-bars fa-xmark");
+        $('body').css('overflow', ($('body').css('overflow') === "hidden" ? "" : "hidden"));
     });
 </script>

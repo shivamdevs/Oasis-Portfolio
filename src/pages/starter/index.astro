@@ -1,0 +1,62 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FlyCard from '../../components/assets/FlyCard.astro';
+import HeaderCard from '../../components/assets/HeaderCard.astro';
+import ProjectCard from '../../components/assets/ProjectCard.astro';
+
+const PROJECTS = [
+		{
+			icon: "https://d33wubrfki0l68.cloudfront.net/63be68296db87e5f444e3348/screenshot_2023-01-11-07-42-02-0000.png",
+			name: "Phone Directory 2",
+			body: "A ReactJs based phone directory application. Now contacts can be changed anytime needed.",
+			href: "https://phone-directory-2.starter.myoasis.tech"
+		},
+		{
+			icon: "https://d33wubrfki0l68.cloudfront.net/63bebe6accc8e60b10f88398/screenshot_2023-01-11-13-49-59-0000.png",
+			name: "Phone Directory",
+			body: "A ReactJs based phone directory application. Stored data per session and vanishes when reloaded.",
+			href: "https://phone-directory.starter.myoasis.tech"
+		},
+		{
+			icon: "https://d33wubrfki0l68.cloudfront.net/63be7b6eb95e95718c5a3d3a/screenshot_2023-01-11-09-04-21-0000.png",
+			name: "Health Tracker",
+			body: "ReactJs based static health tracker with working BMI calculator. First approach towards SPA.",
+			href: "https://health-tracker.starter.myoasis.tech"
+		},
+		{
+			icon: "https://d33wubrfki0l68.cloudfront.net/63be82ea4ec137000a0c9743/screenshot_2023-01-11-09-35-43-0000.png",
+			name: "Tic Tac Toe - Game",
+			body: "A Friendly game to play on free time. Based on HTML, CSS, JavaScript.",
+			href: "https://tictactoe.starter.myoasis.tech"
+		},
+		{
+			icon: "https://d33wubrfki0l68.cloudfront.net/63be8390297b4b0009321b5b/screenshot_2023-01-11-09-38-29-0000.png",
+			name: "Calculator",
+			body: "A HTML, CSS, JavaScript based online Calculator with basic calculation and functions.",
+			href: "https://calculator.starter.myoasis.tech"
+		}
+	];
+---
+
+<Layout title="Starter Projects | Shivam Dewangan | Front-end Developer">
+	<Header />
+	<HeaderCard
+		title="My Starter Projects"
+		body="These are the projects that I started with in the filed of Web Development (and the only ones which were not lost in mistake)."
+		linktext=""
+		linktarget=""
+		linkhref=""
+	/>
+	<FlyCard width="1200" area="">
+		<ProjectCard items={PROJECTS} />
+		<div class="center-content with-margin-4">
+			<div class="center-content with-margin-1" style="font-size: 14px">Copyright warning: All this pages were designed by me. Some ideas from other websites were taken.</div>
+			<div class="center-content with-margin-1">Look for more stuff.</div>
+			<a href="/projects" class="button-classic"><i class="far fa-microchip"> &nbsp; </i> Explore Recent Projects</a>
+			<a href="/working" class="button-classic"><i class="far fa-radar"> &nbsp; </i> Explore Working Projects</a>
+		</div>
+	</FlyCard>
+	<Footer/>
+</Layout>
