@@ -20,7 +20,7 @@
 </header>
 <script>
     document.querySelectorAll('a.pjs-header-button').forEach(link => {
-        if (link.getAttribute('href') === location.pathname) link.classList.add('pjs-active');
+        if (location.pathname.includes(link.getAttribute('href'))) link.classList.add('pjs-active');
     });
 </script>
 <style>
