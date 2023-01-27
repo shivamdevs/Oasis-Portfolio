@@ -7,7 +7,8 @@
 	let { width, area } = Astro.props as Props;
 	width = width || '1000';
 	width = `card-of-width width-${width}`;
-	const cardClass = area ? "card-wrap card-body" : "card-wrap";
+	let cardClass = area ? "card-body" : "";
+	cardClass += " card-wrap activity slide-in";
 ---
 
 <div class="fly-card">
@@ -34,13 +35,18 @@
 	}
 	.card-body {
 		min-height: 20rem;
-		background: var(--color-bg-alter);
+		background: var(--color-bg);
+		box-shadow: 0 2px 4px 2px #0001;
 		border-radius: 15px;
+		transition: .2s;
 		border: 1px solid #ddd;
+	}
+	.card-body:hover {
+		box-shadow: 0 2px 4px 2px #0002;
 	}
 	@media screen and (max-width: 701px) {
 		.card-flex {
 			flex-direction: column;
 		}
-	}	
+	}
 </style>

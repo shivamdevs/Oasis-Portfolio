@@ -1,44 +1,64 @@
 <div class="fly-card-slot">
-    <div class="card-break">
-        <p class="card-icon"><i class="fa-fw far fa-layer-plus"></i></p>
-        <p class="card-title">Designer</p>
-        <p class="card-content">I value simple content structure, clean design patterns, and thoughtful interactions.</p>
-    </div>
-    <div class="card-break">
-        <p class="card-subtitle">Things I enjoy designing:</p>
-        <p class="card-content">UX, UI, Web, Js Libraries</p>
-    </div>
-</div>
-<div class="fly-card-slot">
-    <div class="card-break">
+    <div class="card-break activity fade-slide-in">
         <p class="card-icon"><i class="fa-fw fas fa-terminal"></i></p>
         <p class="card-title">Frontend Developer</p>
         <p class="card-content">I like to code things from scratch, and enjoy bringing ideas to life in the browser.</p>
     </div>
-    <div class="card-break">
-        <p class="card-subtitle">Languages I speak:</p>
+    <div class="card-break activity fade-slide-in">
+        <p class="card-subtitle">Languages I write:</p>
         <p class="card-content">HTML, CSS, JavaScript, PHP</p>
     </div>
-	    <div class="card-break">
+	    <div class="card-break activity fade-slide-in">
         <p class="card-subtitle">Frameworks I know:</p>
         <p class="card-content">ReactJs, Astro</p>
     </div>
 </div>
+<div class="fly-card-slot">
+    <div class="card-break activity fade-slide-in">
+        <p class="card-icon"><i class="fa-fw far fa-cloud"></i></p>
+        <p class="card-title">Backend Developer</p>
+        <p class="card-content">I value fast and secure network connection, running on multiple devices at a time.</p>
+    </div>
+    <div class="card-break activity fade-slide-in">
+        <p class="card-subtitle">Languages I code:</p>
+        <p class="card-content">PHP, Java</p>
+    </div>
+	    <div class="card-break activity fade-slide-in">
+        <p class="card-subtitle">Codebases I query:</p>
+        <p class="card-content">Firebase, phpMyAdmin, MongoDB, Pocketbase, Postgres, SQL, MySQL, MySQLi</p>
+    </div>
+</div>
+<div class="fly-card-slot">
+    <div class="card-break activity fade-slide-in">
+        <p class="card-icon"><i class="fa-fw far fa-layer-plus"></i></p>
+        <p class="card-title">Web Designer</p>
+        <p class="card-content">I value simple content structure, clean design patterns, and thoughtful interactions.</p>
+    </div>
+    <div class="card-break activity fade-slide-in">
+        <p class="card-subtitle">Programs I use:</p>
+        <p class="card-content">Figma, Canva</p>
+    </div>
+	    <div class="card-break activity fade-slide-in">
+        <p class="card-subtitle">Styling I do:</p>
+        <p class="card-content">UI, UX</p>
+    </div>
+</div>
 <style>
     .fly-card-slot {
-		border-left: 1px solid #ddd;
-		padding: 20px 5vw;
+		border-right: 1px solid #ddd;
+		padding: 20px 2vw;
 		text-align: center;
+		align-self: stretch;
 		flex: 1 1 auto;
 	}
 	@media screen and (max-width: 701px) {
 		.fly-card-slot {
 			width: 100%;
-			border-left: none;
-			border-top: 1px solid #ddd;
+			border-right: none;
+			border-bottom: 1px solid #ddd;
 		}
 	}
-	.fly-card-slot:first-child {
+	.fly-card-slot:last-child {
 		border: none;
 	}
 	.card-icon {
@@ -47,7 +67,11 @@
 		align-items: center;
 		background-color: #2bc48a;
 		padding: 13px 12px;
+		transition: .2s;
 		border-radius: 50%;
+	}
+	.fly-card-slot:hover .card-icon {
+		color: #fff;
 	}
 	.card-break {
 		margin: 3rem auto;
@@ -58,6 +82,10 @@
 	.card-title {
 		font-size: 1.4em;
 		font-weight: 500;
+		transition: .2s;
+	}
+	.fly-card-slot:hover .card-title {
+		color: #2bc48a;
 	}
 	.card-subtitle {
 		color: var(--base-card-color);

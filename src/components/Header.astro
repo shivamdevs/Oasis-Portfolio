@@ -26,17 +26,29 @@
 <style>
     .pjs-header {
         width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        transition: .2s;
+        background-color: var(--color-bg);
+        background-image: url(/assets/images/purple.webp);
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .pjs-header-up {
+        box-shadow: 0 0 10px 5px #0002;
     }
     .pjs-header-flex {
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
         align-items: center;
-        padding: 20px;
+        padding: 10px 20px;
         position: relative;
     }
     .pjs-header-logo {
-        width: 60px;
+        width: 50px;
         display: block;
     }
     .pjs-header-logo img {
@@ -49,7 +61,7 @@
         border-radius: 25px;
         text-decoration: none;
         color: var(--color-text);
-        transition: .1s;
+        transition: .3s;
         font-size: var(--layout-font-size);
     }
     .pjs-header-button:hover {
@@ -68,7 +80,7 @@
     }
     .pjs-header-menu-button {
         background: none;
-        padding: 14px 12px;
+        padding: 14px 13px;
     }
     .pjs-header-menu-button:hover,
     .pjs-header-button-differ:hover {
@@ -88,7 +100,7 @@
         }
         .pjs-header-flex.pjs-active .pjs-header-menu-button {
             right: 20px;
-            top: 23px;
+            top: 10px;
         }
         .pjs-header-right.pjs-header-visible {
             display: flex;
@@ -99,6 +111,10 @@
             inset: 0;
             overflow: auto;
             background-color: var(--color-bg);
+            background-image: url(/assets/images/purple.webp);
+			background-position: center top;
+			background-repeat: repeat-y;
+			background-size: 100vw auto;
         }
         .pjs-header-right:not(.pjs-header-visible) {
             display: none;
@@ -109,10 +125,20 @@
     }
 </style>
 <script client:load>
+
     $(".pjs-header-menu-button").click(function(e) {
         $(".pjs-header-right").toggleClass("pjs-header-visible");
         $(".pjs-header-flex").toggleClass("pjs-active");
         $("i", this).toggleClass("fa-bars fa-xmark");
         $('body').css('overflow', ($('body').css('overflow') === "hidden" ? "" : "hidden"));
     });
+    $(document).scroll(header_shadow);
+    function header_shadow() {
+        if ($("html")[0].scrollTop > 0) {
+            $(".pjs-header").addClass("pjs-header-up");
+        } else {
+            $(".pjs-header").removeClass("pjs-header-up");
+        }
+    }
+    header_shadow();
 </script>

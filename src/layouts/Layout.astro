@@ -86,6 +86,10 @@ const { title } = Astro.props as Props;
 
 			body {
 				margin: 0;
+				background-image: url(/assets/images/purple.webp);
+				background-position: center top;
+				background-repeat: repeat-y;
+				background-size: 100vw auto;
 			}
 
 			:global(*) {
@@ -188,30 +192,45 @@ const { title } = Astro.props as Props;
 			:global(.reference:hover) {
 				color: #2a52be;
 			}
+
+			:global(.activity.fade-in) {
+				transition: opacity 1s;
+				opacity: 0;
+			}
+			:global(.activity.fade-in.active) {
+				opacity: 1;
+			}
+			:global(.activity.slide-in) {
+				transition: top 1s;
+				position: relative;
+				top: 50px;
+			}
+			:global(.activity.slide-in.active) {
+				top: 0;
+			}
+			:global(.activity.fade-slide-in) {
+				transition: top 1s, opacity 1s;
+				position: relative;
+				opacity: 0;
+				top: 50px;
+			}
+			:global(.activity.fade-slide-in.active) {
+				opacity: 1;
+				top: 0;
+			}
 		</style>
 		<script client:load>
-			$(".code-lines code").each(function () {
-				hljs.highlightElement(this);
-			});
-			$(".code-lines .code-copy").each(function (item) {
-				item.click(function () {
-					item.addClass("copied");
-					item.find("i")
-						.removeClass("fa-copy")
-						.addClass("fa-clipboard-check");
-					$.timeout(() => {
-						item.removeClass("copied");
-						item.find("i")
-							.removeClass("fa-clipboard-check")
-							.addClass("fa-copy");
-					}, 1000);
+			$(document).scroll(detect_activity);
+			function detect_activity() {
+				$(".activity").each((act) => {
+					if (act[0].getBoundingClientRect().top - window.innerHeight + 20 < 0) {
+						act.addClass("active");
+					} else {
+						act.removeClass("active");
+					}
 				});
-				new ClipboardJS(this, {
-					text: function (trigger) {
-						return item.prev().html();
-					},
-				});
-			});
+			}
+			detect_activity();
 		</script>
 	</body>
 </html>

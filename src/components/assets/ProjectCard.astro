@@ -11,7 +11,7 @@ let { items } = Astro.props;
 				name: unknown;
 				body: unknown;
 			}) => (
-				<a href={item.href} class="pjs-card" target="_blank">
+				<a href={item.href} class="pjs-card activity fade-slide-in" target="_blank">
 					<div class="pjs-logo">
 						<img src={item.icon} alt="" class="pjs-icon" />
 					</div>
@@ -27,11 +27,16 @@ let { items } = Astro.props;
 <style>
 	.cards {
 		display: flex;
+		background: var(--color-bg);
 		flex-wrap: nowrap;
 		flex-direction: column;
-		box-shadow: 0 0 10px 5px var(--color-border);
+		transition: .2s;
+		box-shadow: 0 0 5px 4px #0000000b;
 		border-radius: 6px;
 		overflow: hidden;
+	}
+	.cards:hover {
+		box-shadow: 0 0 5px 4px #0000001b;
 	}
 	.pjs-card {
 		text-decoration: none;
@@ -43,7 +48,7 @@ let { items } = Astro.props;
 		overflow: hidden;
 		background: var(--color-bg);
 		padding: 10px 20px;
-		transition: 0.2s;
+		transition: top 1s, opacity 1s, background .3s !important;
 	}
 	.pjs-card:nth-child(even) {
 		background: #f8faff;

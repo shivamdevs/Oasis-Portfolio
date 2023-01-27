@@ -8,7 +8,7 @@ const { title, body } = Astro.props as Props;
 ---
 
 <div class="base-card">
-	<div class="card-of-width width-800">
+	<div class="card-of-width width-800 activity fade-in">
 		<h2>{title}</h2>
 		<p>{body}</p>
 		<div><slot /></div>
@@ -23,6 +23,7 @@ const { title, body } = Astro.props as Props;
 		width: 100%;
 		padding: 4rem 20px 14rem;
 		background-color: var(--base-card-color);
+		box-shadow: 0 2px 4px 2px #0001;
 		color: #fff;
 		text-align: center;
 	}
